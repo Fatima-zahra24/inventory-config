@@ -1,0 +1,44 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: gateway-service
+
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          # ==================== Product Service ====================
+          - id: product-service
+            uri: lb://product-service
+            predicates:
+              - Path=/api/products/**, /api/product-suppliers/**, /api/categories/**
+
+          # ==================== Supplier Service ====================
+          - id: supplier-service
+            uri: lb://supplier-service
+            predicates:
+              - Path=/api/suppliers/**, /api/supplier-contacts/**
+
+          # ==================== Order Service ====================
+          - id: order-service
+            uri: lb://order-service
+            predicates:
+              - Path=/api/orders/**, /api/order-items/**
+
+          # ==================== Stock Service ====================
+          - id: inventory-service
+            uri: lb://inventory-service
+            predicates:
+              - Path=/api/inventories/**, /api/stock-movements/**, /api/inventory-rules/**, /api/warehouses/**, /api/batch/**
+
+          # ==================== Notification Service ====================
+          - id: notification-service
+            uri: lb://notification-service
+            predicates:
+              - Path=/api/notifications/**, /api/notification-templates/**
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
