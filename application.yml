@@ -26,6 +26,10 @@ management:
     defaults:
       enabled: true
 
+springdoc:
+  api-docs:
+    path: /ps/api-docs
+
 logging:
   level:
     root: INFO
