@@ -30,6 +30,12 @@ spring:
       properties:
         spring.json.add.type.headers: false
 
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+
 server:
   port: 8081
 
