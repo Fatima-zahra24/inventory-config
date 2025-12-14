@@ -18,15 +18,15 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
   # Configuration Kafka
-  kafka:
-    bootstrap-servers: kafka:29092
-    consumer:
-      group-id: notification-service-group
-      auto-offset-reset: earliest
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
-      properties:
-        spring.json.trusted.packages: "*"
+#  kafka:
+#    bootstrap-servers: kafka:29092
+#    consumer:
+#      group-id: notification-service-group
+#      auto-offset-reset: earliest
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+#      properties:
+#        spring.json.trusted.packages: "*"
 
   # Configuration Email (Gmail exemple)
   mail:
