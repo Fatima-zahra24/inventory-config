@@ -39,7 +39,13 @@ spring:
         spring.json.trusted.packages: "*"
         spring.json.add.type.headers: false
       auto-offset-reset: earliest
-      
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+
 server:
   port: 8083
 
