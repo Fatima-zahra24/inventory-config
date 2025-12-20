@@ -39,6 +39,11 @@ spring:
             predicates:
               - Path=/api/notifications/**, /api/notification-templates/**
 
+# ==================== JWT Configuration ====================
+jwt:
+  secret: Y2VjaS1lc3QtdW5lLWNsZS1zZWNyZXRlLXRyZXMtbG9uZ3VlLXBvdXItbGEtc2lnbmF0dXJlLWp3dC1xdWktZG9pdC1mYWlyZS1wbHVzLWRlLTI1Ni1iaXRz
+  expiration: 86400000  # 24 heures en millisecondes
+
 logging:
   level:
     org.springframework.cloud.gateway: DEBUG
